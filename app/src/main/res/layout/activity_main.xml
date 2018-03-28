@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/tu"
+                android:scaleType="fitXY"/>
+            <com.xiangpan.roundimageview.RoundImageView
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/tu"
+                app:image_shadow="true"
+                app:image_radius = "16dp"
+                app:image_shadow_radius="20dp"/>
+
+            <com.xiangpan.roundimageview.RoundImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/tu"
+                app:shadow_color="0xff303F9F"
+                app:image_circle="true"
+                app:image_shadow="true"
+                app:image_radius = "16dp"
+                app:image_shadow_radius="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
