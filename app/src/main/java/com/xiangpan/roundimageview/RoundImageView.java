@@ -75,6 +75,7 @@ public class RoundImageView extends AppCompatImageView {
 
         if (!mIsShadow)
             mShadowRadius = 0;
+
         imageWidth = width - (int) mShadowRadius * 2;
         imageHeight = height - (int) mShadowRadius * 2;
 
@@ -106,7 +107,6 @@ public class RoundImageView extends AppCompatImageView {
         BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         Bitmap targetBitmap = Bitmap.createBitmap(imageWidth, imageHeight, Bitmap.Config.ARGB_8888);
         Canvas targetCanvas = new Canvas(targetBitmap);
-        targetCanvas.drawColor(0x000);
 
         mPaint.setShader(bitmapShader);
 
@@ -123,7 +123,7 @@ public class RoundImageView extends AppCompatImageView {
             RectF rectF = new RectF(mShadowRadius, mShadowRadius, width - mShadowRadius, height - mShadowRadius);
             canvas.drawRoundRect(rectF, mRadius, mRadius, mPaint);
             mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER));
-            mPaint.setShadowLayer(0, 0, 0, 0xfff);
+            mPaint.setShadowLayer(0, 0, 0, 0xffffff);
             canvas.drawBitmap(targetBitmap, mShadowRadius, mShadowRadius, mPaint);
             return target;
         }else {
@@ -140,7 +140,6 @@ public class RoundImageView extends AppCompatImageView {
         BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         Bitmap targetBitmap = Bitmap.createBitmap(imageWidth, imageHeight, Bitmap.Config.ARGB_8888);
         Canvas targetCanvas = new Canvas(targetBitmap);
-        targetCanvas.drawColor(0x000);
 
         mPaint.setShader(bitmapShader);
 
@@ -157,7 +156,7 @@ public class RoundImageView extends AppCompatImageView {
             canvas.drawCircle(width / 2, height / 2, Math.min(imageWidth, imageHeight) / 2,
                     mPaint);
             mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER));
-            mPaint.setShadowLayer(0, 0, 0, 0xfff);
+            mPaint.setShadowLayer(0, 0, 0, 0xffffff);
             canvas.drawBitmap(targetBitmap, mShadowRadius, mShadowRadius, mPaint);
             return target;
         }else {
